@@ -30,12 +30,11 @@ class Board
         index += 1 if index == 6
       end
     end
-    next_turn
+    next_turn(index)
   end
 
   def next_turn(ending_cup_idx)
     # helper method to determine whether #make_move returns :switch, :prompt, or ending_cup_idx
-    if 
   end
 
   def render
