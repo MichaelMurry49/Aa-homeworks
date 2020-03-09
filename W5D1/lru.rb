@@ -44,7 +44,11 @@ class LRUCache
 
     def add(el)
       # adds element to cache according to LRU principle
-      if @count == @size
+      if @inverse_hash.has_key?(el)
+        @lru.delete(@inverse_hash[el])
+        @inverse_hash.delete(el)
+        @count -= 1
+      elsif @count == @size
         @inverse_hash.delete(@lru[@index - @size])
         @lru.delete(@index - @size)
         @count -= 1
