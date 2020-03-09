@@ -49,8 +49,8 @@ class LRUCache
         @inverse_hash.delete(el)
         @count -= 1
       elsif @count == @size
-        @inverse_hash.delete(@lru[@index - @size])
-        @lru.delete(@index - @size)
+        @inverse_hash.delete(@inverse_hash.keys.first)
+        @lru.delete(@lru.keys.first)
         @count -= 1
       end
       @lru[@index] = el
@@ -108,6 +108,7 @@ johnny_cache = LRUCache.new(4)
   john_cache.add(:ring_of_fire)
   john_cache.add("I walk the line")
   john_cache.add({a: 1, b: 2, c: 3})
+  #john_cache.add("I walk the line")
 
 
  p john_cache.count # => returns 2
