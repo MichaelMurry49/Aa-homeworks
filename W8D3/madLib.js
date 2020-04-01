@@ -7,9 +7,12 @@ function isSubstring(searchString, subString) {
     let i = 0;
     let j = subString.length;
     for(let i = 0; i < searchString.length - 0; i+=1){
+        // console.log(searchString.substring(i, j));
+        // console.log(subString);
         if(searchString.substring(i, j) === subString){
             return true;
         }
+        j+=1
     }
     return false;
 }
@@ -28,8 +31,10 @@ function isPrime(num) {
     if(num < 2){
         return false;
     }
-    for(let i = 0; i < num; i++){
+    for(let i = 2; i < num; i++){
+        console.log(i)
         if(num % i === 0){
+            console.log(i)
             return false
         }
     }
@@ -51,5 +56,12 @@ function sumOfNPrimes(n) {
 }
 
 console.log(madLib('walk', 'green', 'tree'));
+console.log(isSubstring('walk', 'green'));
+console.log(isSubstring('heel', 'eel'));
+console.log(fizzBuzz([1,2,15,3,25]));
+console.log(isPrime(5));
+console.log(isPrime(9));
+console.log(sumOfNPrimes(5));
+
 
 
